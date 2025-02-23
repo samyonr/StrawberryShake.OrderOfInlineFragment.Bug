@@ -1,0 +1,33 @@
+query NotWorkingQuery {
+    people {
+        id
+        name
+        pet {
+            id
+            __typename
+            ... on Cat {
+                furColor
+            }
+            ... on Dog {
+                breed
+            }
+        }
+    }
+    shelters {
+        id
+        location
+        pet {
+            id
+            __typename
+            ... on Bird {
+                wingSpan
+            }
+            ... on Cat {
+                furColor
+            }
+            ... on Dog {
+                breed
+            }
+        }
+    }
+}

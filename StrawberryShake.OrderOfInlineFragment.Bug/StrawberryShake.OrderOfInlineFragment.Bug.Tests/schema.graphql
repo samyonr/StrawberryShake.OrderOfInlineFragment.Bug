@@ -1,0 +1,39 @@
+schema {
+  query: Query
+}
+
+interface IPet {
+  id: Int!
+}
+
+type Query {
+  people: [Person!]!
+  shelters: [Shelter!]!
+}
+
+type Dog implements IPet {
+  id: Int!
+  breed: String!
+}
+
+type Cat implements IPet {
+  id: Int!
+  furColor: String!
+}
+
+type Bird implements IPet {
+  id: Int!
+  wingSpan: Int!
+}
+
+type Shelter {
+  id: Int!
+  location: String!
+  pet: IPet
+}
+
+type Person {
+  id: Int!
+  name: String!
+  pet: IPet
+}
